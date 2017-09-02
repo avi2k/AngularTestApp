@@ -3,8 +3,37 @@
 <head runat="server">
     <title>Angular example</title>
 
-     <script src = "lib/angular/angular.min.js"></script>
-	<script>
+<script src = "lib/angular/angular.min.js"></script>
+
+
+</head>
+<body>
+           <div id="app1" ng-app="myAvi" ng-controller="myCtrl">
+							{{ Title + ". " + firstName + " " + lastName }}
+			</div>
+			
+			
+	<div id="app2" style="text-align:center" ng-app="mymodule" ng-controller="myctrl">  
+   
+         <label>Name:</label>
+		 <input style="background-color:{{yourName}}" ng-model="yourName" value="{{yourName}}"  placeholder = "Enter a name here">   <br/><br/>
+		 <label>User Name:</label>
+         <input type = "text" ng-model="UserName" placeholder = "Enter a Username "><br/><br/>
+		 <label>Email Id:</label>
+         <input type = "text" ng-model = "Emailid" placeholder = "Enter a Email-id"><br/><br/>
+		 
+		 <hr />       		 
+		 	
+         <h2>{{yourName}}!</h2>
+		 <h2>{{UserName}}!</h2>
+		
+    </div>
+ 
+</body>
+
+<script>
+try
+{
 			var app = angular.module("myAvi", []);
 			app.controller("myCtrl", function($scope)
 			{
@@ -12,33 +41,19 @@
 				$scope.firstName = "Avinash";
 				$scope.lastName = "Kumar";
 			});
+			
+			var app2 = angular.module("mymodule", []);
+			app2.controller("myctrl", function($scope)
+			{
+				$scope.yourName = "dhondhu";
+				$scope.UserName = "RK";
+				$scope.Emailid = "rk@gmail.com";
+			});
+			angular.bootstrap(document.getElementById("app2"),['mymodule']);
+}
+catch(e){
+	alert(e);
+}
 </script> 
-
-</head>
-<body>
-           <div ng-app="myAvi" ng-controller="myCtrl">
-							{{ Title + ". " + firstName + " " + lastName }}
-			</div>
-			
-			
-	<div style="text-align:center" ng-app="abc">  
-   
-         <label>Name:</label>
-		 <input style="background-color:{{yourName}}" ng-model="yourName" value="{{yourName}}"  placeholder = "Enter a name here">   <br/><br/>
-		 <label>User Name:</label>
-         <input type = "text" ng-model = "UserName" placeholder = "Enter a Username "><br/><br/>
-		 <label>Email Id:</label>
-         <input type = "text" ng-model = "Emailid" placeholder = "Enter a Email-id"><br/><br/>
-		 <label>Password:</label>
-         <input type = "text" ng-model = "Password" placeholder = "Enter a Password"><br/>
-		 <hr />       		 
-		 <p>My first expression: {{ 5 + 5 + 1 }}</p>		
-         <h2>{{yourName}}!</h2>
-		 <h2>{{UserName}}!</h2>
-		 <h2>{{Emailid}}! </h2>		
-		 <h2>{{Password}}!</h2>
-    </div>
- 
-</body>
  
 </html>
