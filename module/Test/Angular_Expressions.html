@@ -1,0 +1,24 @@
+<html>
+   
+   <head>
+      <title>AngularJS Expressions</title>
+
+<script src = "lib/angular/angular.min.js"></script>
+   </head>
+   
+   <body>
+      <h1>Sample Test Application</h1>
+      
+      <div ng-app = ""> 
+         <p>Enter a quantity: <input type = "text" ng-model = "quantity"></p>
+         <p>Enter a Cost: <input type = "text" ng-model = "Cost"> </p>
+		 <hr/>
+         <p>Expense Rs: {{quantity * Cost}}</p>
+      
+         
+      </div>
+      
+     
+      
+   </body>
+</html>

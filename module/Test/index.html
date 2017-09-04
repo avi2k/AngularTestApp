@@ -4,7 +4,33 @@
     <title>Angular example</title>
 
 <script src = "lib/angular/angular.min.js"></script>
-
+<script>
+try
+{
+			var app = angular.module("myAvi", []);
+			app.controller("myCtrl", function($scope)
+			{
+				$scope.Title = "Mr";
+				$scope.firstName = "Avinash";
+				$scope.lastName = "Kumar";
+			});
+			
+			var app2 = angular.module("mymodule", []);
+			app2.controller("myctrl", function($scope)
+			{
+				$scope.yourName = "dhondhu";
+				$scope.UserName = "RK";
+				$scope.Emailid = "rk@gmail.com";
+			});
+			angular.element(document).ready(function(){
+				angular.bootstrap(document.getElementById("app2"),['mymodule']);
+			});
+			
+}
+catch(e){
+	alert(e);
+}
+</script> 
 
 </head>
 <body>
@@ -31,29 +57,6 @@
  
 </body>
 
-<script>
-try
-{
-			var app = angular.module("myAvi", []);
-			app.controller("myCtrl", function($scope)
-			{
-				$scope.Title = "Mr";
-				$scope.firstName = "Avinash";
-				$scope.lastName = "Kumar";
-			});
-			
-			var app2 = angular.module("mymodule", []);
-			app2.controller("myctrl", function($scope)
-			{
-				$scope.yourName = "dhondhu";
-				$scope.UserName = "RK";
-				$scope.Emailid = "rk@gmail.com";
-			});
-			angular.bootstrap(document.getElementById("app2"),['mymodule']);
-}
-catch(e){
-	alert(e);
-}
-</script> 
+
  
 </html>

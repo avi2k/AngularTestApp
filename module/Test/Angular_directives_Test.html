@@ -1,0 +1,27 @@
+<html>
+   
+   <head>
+      <title>AngularJS Directives</title>
+
+<script src = "lib/angular/angular.min.js"></script>
+   </head>
+   
+   <body>
+      <h1>Sample Application</h1>
+      
+      <div ng-app = "" ng-init = "countries = [{locale:'en-Ind',name:'India Bihar'}, {locale:'en-Ind',name:'India Delhi'}, {locale:'en-FR',name:'France'}]"> 
+         <p>Enter Name: <input type = "text" ng-model = "name"></p>
+         <p>Hello <span ng-bind = "name"></span>!</p>
+         <p>List of Countries with locale:</p>
+      
+         <ol>
+            <li ng-repeat = "country in countries">
+               {{ 'Country: ' + country.name + ', Locale: ' + country.locale }}
+            </li>
+         </ol>
+      </div>
+      
+     
+      
+   </body>
+</html>
